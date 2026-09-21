@@ -59,10 +59,10 @@ Moyennes sur dix exécutions, tirées de `resultats/journal_execution.txt`.
 
 | Entrée | BFS | DFS | IDDFS |
 |---|---|---|---|
-| Ex1-1 (20 coups) | 20 — 0,665 s | 2 698 — 0,035 s | 20 — 1,491 s |
-| Ex1-2 (17 coups) | 17 — 0,167 s | 65 971 — 1,062 s | 17 — 0,417 s |
-| Ex1-3 (insoluble) | échec — 2,024 s | échec — 1,903 s | échec — 43,425 s |
-| Ex1-4 (28 coups) | 28 — 1,909 s | 64 830 — 1,168 s | 28 — 22,136 s |
+| Ex1-1 (20 coups) | 20 — 0,689 s | 2 698 — 0,035 s | 20 — 1,570 s |
+| Ex1-2 (17 coups) | 17 — 0,144 s | 65 971 — 1,069 s | 17 — 0,391 s |
+| Ex1-3 (insoluble) | échec — 2,042 s | échec — 1,981 s | échec — 46,534 s |
+| Ex1-4 (28 coups) | 28 — 2,084 s | 64 830 — 1,229 s | 28 — 23,400 s |
 
 - Discussion des résultats : C'est la différence la plus nette. Le BFS et l'IDDFS
 trouvent toujours le chemin le plus court. Dans nos trois entrées solubles, le DFS n’a jamais trouvé le chemin optimal.
@@ -76,10 +76,10 @@ Avec une limite de 50, la frontière restait très petite, mais l'algorithme pou
 Nous avons donc retiré cette limite dans la version finale. Sans limite, le dfs trouve bien les solutions des entrées solubles,
 mais sa frontière peut devenir beaucoup plus grande et les chemins obtenus peuvent être très longs.
 
-- Discussion sur le temps : moins tranché que je ne l'imaginais. Le DFS met 0,035 s sur Ex1-1,
+- Discussion sur le temps : moins tranché que je ne l'imaginais. Le DFS met 0,033s sur Ex1-1,
 il explore seulement 2 775 états avant de trouver l’objectif, ce qui explique son faible temps d’exécution.
-Sur Ex1-2 il devient six fois plus lent que le BFS. Le BFS est le plus stable. L'IDDFS est toujours le plus lent, ce qui
-est logique puisqu'il recommence à chaque limite : 43 secondes sur Ex1-3, où il
+Sur Ex1-2 il devient sept fois plus lent que le BFS. Le BFS est le plus stable. L'IDDFS est toujours le plus lent, ce qui
+est logique puisqu'il recommence à chaque limite : 46 secondes sur Ex1-3, où il
 épuise les 31 limites sans jamais trouver.
 
 - Le BFS est le meilleur choix par défaut à cause de sa rapidité et de sa régularité. Sa limite est la mémoire.
